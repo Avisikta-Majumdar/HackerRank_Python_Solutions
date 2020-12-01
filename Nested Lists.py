@@ -1,26 +1,27 @@
 if __name__ == '__main__':
-    fl =[]
-    m=[]
-    for _ in range(int(input())):#Taking inputs
-        name = input()
+    final_list =[]
+    marks=[]
+    for _ in range(int(input())):
+        l= list()
+        l.append(input())
         score = float(input())
-        l= list()#This l list is used for making nested lists like -->[name , score]
-        l.append(name)
-        l.append( score)
-        m.append(score)
-        fl.append(l)
-    m.sort()
-    mk = min(m)
-    i=0
-    mk1= mk
-    while mk1 == mk:#Finding The second lowest grade here the cond. is mk1==mk because bef we initilize the min value to mk1 and mk1 want to take second lowest value
-        mk1= m[i]
-        i+=1
-
-    na = []
-    for i in fl:
-        if i[1] == mk1:
-            na.append(i[0])
-    na.sort()
-    for j in na:
-        print(j)
+        l.append(score)
+        marks.append(score)
+        final_list.append(l)
+    marks.sort()
+    min_value = marks[0]
+    print(marks)
+    marks.remove(min_value)
+    print("Updated marks:-",marks)
+    for i in marks:
+        if i>min_value:
+            Result_value = i
+            break
+    print("Result_value" , Result_value)
+    Result_names=[]
+    for i in range(len(final_list)):
+        if Result_value in final_list[i]:
+            Result_names.append(final_list[i][0])
+    Result_names.sort()
+    for i in Result_names:
+        print(i)
