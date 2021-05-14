@@ -1,4 +1,11 @@
 if __name__ == '__main__':
     n = int(input())
-    for i in range(1,n+1):
-        print(i,end='')
+    x = 1
+    c = ""
+    for x in range(n):
+        x = x + 1
+        a = int(n) - int(x)
+        b = int(n) - int(a)
+        c = str(c) + str(b)
+
+    print(c)
